@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Rick and Morty</title>
+</head>
+<body class="bg-gradient-to-r from-violet-500 to-fuchsia-500" >
+
+    <div
+    class="
+    font-bold
+    italic
+    flex flex-wrap
+    place-content-center
+    my-10
+    text-4xl 
+    text-white
+    drop-shadow-md
+    "
+    >
+        <img src="./../static/sparkle.png" alt="emoji" class="w-10">
+        <h1>
+            The Rick and Morty Series Characters
+        </h1>
+        <img src="./../static/sparkle.png" alt="emoji" class="w-10">
+    </div>
+
+    <div class="flex flex-wrap place-content-center">
+        
+        {% for personaje in personajes %}
+        <!-- div tarjeta -->
+        <!-- bg-gradient-to-r from-green-400 to-blue-500 -->
+        <div class="bg-amber-200 mx-5 my-4 rounded-lg 
+        bg-gradient-to-r from-pink-400 to-purple-400
+        focus:border-blue-400
+        drop-shadow-md
+        ">
+            <img src=" {{ personaje['image'] }} " alt=" {{ personaje['name'] }} " class="rounded-t-lg">
+            <div class="rounded-b-lg m-3 ">
+                <h1
+                class="font-bold"
+                >Nombre: {{ personaje["name"] }} </h1>
+                <p class="italic" >Status: {{ personaje["status"] }} </p>
+                <p class="italic" >Species: {{ personaje["species"] }} </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+</body>
+</html>
